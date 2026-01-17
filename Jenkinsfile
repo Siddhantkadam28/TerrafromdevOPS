@@ -13,7 +13,7 @@ pipeline {
     stage('Terraform Init') {
       steps {
         sh '''
-          //terraform version
+          terraform version
           terraform init --reconfigure
         '''
       }
@@ -23,6 +23,7 @@ pipeline {
       steps {
         sh 'terraform validate'
       }
+    }
 
     stage('Terraform Plan') {
       steps {
