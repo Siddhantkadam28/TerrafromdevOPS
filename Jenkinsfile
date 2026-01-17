@@ -1,11 +1,6 @@
 pipeline {
   agent any
 
-  options {
-    timestamps()
-    disableConcurrentBuilds()
-  }
-
   stages {
 
     stage('Checkout Code') {
@@ -18,8 +13,8 @@ pipeline {
     stage('Terraform Init') {
       steps {
         sh '''
-          terraform version
-          terraform init
+          //terraform version
+          terraform init --reconfigure
         '''
       }
     }
@@ -28,7 +23,6 @@ pipeline {
       steps {
         sh 'terraform validate'
       }
-    }
 
     stage('Terraform Plan') {
       steps {
