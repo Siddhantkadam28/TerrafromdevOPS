@@ -1,5 +1,5 @@
 variable "aws_region" {
-  default = "ap-south-1"
+  default = "us-east-1"
 }
 
 variable "instance_type" {
@@ -7,6 +7,6 @@ variable "instance_type" {
 }
 
 variable "ami_id" {
-  description = "Amazon Linux 2 AMI"
-  default     = "ami-0f58b397bc5c1f2e8"
+  
+  default     = "ami-0ced6a024bb18ff2e"
 }
