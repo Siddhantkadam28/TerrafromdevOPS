@@ -19,7 +19,7 @@ pipeline {
       steps {
         sh '''
           terraform version
-          terraform init -reconfigure
+          terraform init
         '''
       }
     }
