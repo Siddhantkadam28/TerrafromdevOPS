@@ -37,14 +37,21 @@ pipeline {
         sh 'terraform apply tfplan'
       }
     }
+    stage('Terraform destroy') {
+      steps {
+        input message: 'Approve Terraform destroy?'
+        sh 'terraform destroy tfplan'
+      }
+    }
   }
+  
 
   post {
     success {
-      echo '✅ Infrastructure provisioned successfully!'
+      echo 'Infrastructure provisioned successfully!'
     }
     failure {
-      echo '❌ Terraform pipeline failed'
+      echo ' Terraform pipeline failed'
     }
   }
 }
