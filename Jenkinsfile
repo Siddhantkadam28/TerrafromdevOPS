@@ -40,7 +40,7 @@ pipeline {
     stage('Terraform destroy') {
       steps {
         input message: 'Approve Terraform destroy?'
-        sh 'terraform destroy tfplan'
+        sh 'terraform destroy'
       }
     }
   }
