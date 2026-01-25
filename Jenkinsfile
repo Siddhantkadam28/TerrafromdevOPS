@@ -45,13 +45,4 @@ pipeline {
     }
   }
   
-
-  post {
-    success {
-      echo 'Infrastructure provisioned successfully!'
-    }
-    failure {
-      echo ' Terraform pipeline failed'
-    }
-  }
 }
